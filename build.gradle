@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id "io.freefair.aspectj.post-compile-weaving" version "5.3.3.3"
+}
+
+group 'com.dabramov'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.aspectj:aspectjrt:1.9.6'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava.ajc.options.compilerArgs = ["-sourceroots", "../../../src/main/java/plain"]
